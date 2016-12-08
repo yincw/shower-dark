@@ -247,9 +247,25 @@
     }
     &.black {
         background-color: #000;
+
+        .pattern-theme {
+            color: @patternThemeWhiteColor;
+            background-color: @patternThemeBlackBackgroundColor;
+        }
+        .pattern-author {
+            color: @patternAuthorWhiteColor;
+        }
     }
     &.white {
         background-color: #fff;
+
+        .pattern-theme {
+            color: @patternThemeBlackColor;
+            background-color: @patternThemeWhiteBackgroundColor;
+        }
+        .pattern-author {
+            color: @patternAuthorBlackColor;
+        }
     }
 
     // 封面
@@ -348,16 +364,30 @@
         // 主题
         &-theme {
             position: absolute;
-            bottom: 0;
+            top: 50%;
             left: 0;
             right: 0;
 
+            margin: 0;
+            transform: translate(0,-50%);
             padding: 20px;
-            text-align: right;
-            font-size: 20px;
+            text-align: center;
+            font-size: 30px;
+        }
 
-            color: @patternThemeColor;
-            background-color: @patternThemeBackgroundColor;
+        &-author {
+            position: absolute;
+            right: 30px;
+            bottom: 30px;
+            text-align: right;
+            margin: 0;
+            font-size: 18px;
+
+            li {
+                &::before {
+                    content: '';
+                }
+            }
         }
 
         &-part,
